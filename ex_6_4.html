@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body onload="init()">
+    <h1>Moving Car</h1>
+
+    <img id="img"
+         src="images/car.jpg"
+         width="auto"
+         height="auto"
+         style="position:relative; left:0px;">
+
+    <br><br>
+
+    <button onclick="moveRight()">Move</button>
+    <button onclick="stop()">Stop</button>
+
+    <script>
+        var imgObj;
+        var animate;
+
+        function init() {
+            imgObj = document.getElementById("img");
+            imgObj.style.position = "relative";
+            imgObj.style.left = "0px";
+        }
+
+        function moveRight() {
+            imgObj.style.left =
+                parseInt(imgObj.style.left) + 1 + "px";
+
+            animate = setTimeout(moveRight, 10);
+        }
+
+        function stop() {
+            clearTimeout(animate);
+        }
+    </script>
+</body>
+</html>
